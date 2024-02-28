@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+<nav>
+    <ul class="nav justify-content-center">
+  		<li class="nav-item">
+    		<a class="nav-link active" th:href="@{/}">Home</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" th:href="@{/users/form}">User Form</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" th:href="@{/users/list}">User List</a>
+  		</li>
+	</ul>
+</nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <h2 class="text-center mb-4">Welcome to the Home Page</h2>
+
+            <p class="text-center">
+                <a th:href="@{/users/form}" class="btn btn-primary">Go to User Form</a>
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAqE0958eT9iAqVCm4G9GdPLF5gi6S"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
