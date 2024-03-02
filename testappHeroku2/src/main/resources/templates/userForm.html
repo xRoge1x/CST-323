@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+<nav>
+    <ul class="nav justify-content-center">
+  		<li class="nav-item">
+    		<a class="nav-link active" th:href="@{/}">Home</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" th:href="@{/users/form}">User Form</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" th:href="@{/users/list}">User List</a>
+  		</li>
+	</ul>
+</nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+
+                    <h2 class="text-center mb-4">User Form</h2>
+
+                    <form th:object="${user}" th:action="@{/users/save}" method="post">
+
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" class="form-control" th:field="*{firstName}" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" class="form-control" th:field="*{lastName}" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" th:field="*{email}" required/>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Save</button>
+                    </form>
+
+                    <!-- Link to the user list page -->
+                    <a th:href="@{/users/list}" class="btn btn-link btn-block mt-3">Back to User List</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAqE0958eT9iAqVCm4G9GdPLF5gi6S"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>
