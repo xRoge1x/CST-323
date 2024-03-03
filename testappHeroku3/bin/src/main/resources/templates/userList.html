@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+	
+<nav>
+    <ul class="nav justify-content-center">
+  		<li class="nav-item">
+    		<a class="nav-link active" th:href="@{/}">Home</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" th:href="@{/users/form}">User Form</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" th:href="@{/users/form}">User List</a>
+  		</li>
+	</ul>
+</nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <h2 class="text-center mb-4">User List</h2>
+
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.firstName}"></td>
+                    <td th:text="${user.lastName}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td><a th:href="@{'/users/edit/' + ${user.id}}" class="btn btn-primary btn-sm">Edit</a></td>
+                    <td><a th:href="@{'/users/delete/' + ${user.id}}" class="btn btn-danger btn-sm">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- Link to the user form page -->
+            <a th:href="@{/users/form}" class="btn btn-success btn-block">Add New User</a>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAqE0958eT9iAqVCm4G9GdPLF5gi6S"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
